@@ -1,0 +1,22 @@
+  name: build
+  on: push
+  jobs:
+    compile-msvc-x64-release:
+      name: Windows MSVC x64 Intel Release
+      runs-on: windows-2025
+      steps:
+        - name: Checkout repository code
+          uses: actions/checkout@v6
+
+        - name: Configure MSBuild
+          uses: microsoft/setup-msbuild@v3
+
+        - name: Build app for release
+          run: msbuild DockerWrapper.slnx /t:Build /p:Configuration=Release /p:Platform=x64
+
+        - name: Upload Release build
+          uses: actions/upload-artifact@v7
+          with:
+            name: DockerWrapper.zip
+            path: |
+              x64
