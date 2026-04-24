@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="DockerWrapper/DockerWrapper.vcxproj" Id="921e6172-7c47-45b0-b03f-5efeaad31a8f" />
+</Solution>
